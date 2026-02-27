@@ -5,7 +5,7 @@ pool:
 
 variables:
   - name: projectName
-    value: 'Training-Student-002-OC014-Lab01'            # <-- Update this
+    value: 'Training-Student-002-OC014'            # <-- Update this
   - name: buildPipelineName
     value: 'finweb_brianb_build'          # <-- Update this
   - name: artifactName
@@ -93,5 +93,6 @@ steps:
         --resource-group $(resourceGroup) \
         --name $(webAppName) \
         --src-path deploy.zip \
-        --type zip
+        --type zip \
+        --restart true
   displayName: 'Deploy Artifact to Azure Web App'
